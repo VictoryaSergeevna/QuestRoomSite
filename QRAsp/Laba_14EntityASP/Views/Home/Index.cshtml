@@ -1,0 +1,88 @@
+﻿@using Laba_14EntityASP.Utils
+@using Laba_14EntityASP.Models
+@model Laba_14EntityASP.Utils.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>@Html.ActionLink("Добавить квест комнату", "Create", "Home", new { area = "" }, new { @class = "btn btn-default" })</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Название")
+        </th>
+        <th>
+            @Html.DisplayName("Описание")
+        </th>
+        <th>
+            @Html.DisplayName("Продолжительность")
+        </th>
+        <th>
+            @Html.DisplayName("Мин количество игроков")
+        </th>
+        <th>
+            @Html.DisplayName("Макс количество игроков")
+        </th>
+        <th>
+            @Html.DisplayName("Уровень страха")
+        </th>
+        <th>
+            @Html.DisplayName("Трудность")
+        </th>
+        <th>
+            @Html.DisplayName("Фото")
+        </th>
+        <th>
+            @Html.DisplayName("Телефон")
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model.QuestRooms)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinPlayersCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxPlayersCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FearLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Difficulty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogoPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone.PhoneNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id },null) |
+                @Html.ActionLink("Детали", "Details", new { id = item.Id }, null) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id },null)
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<div class="btn-group">
+    @Html.PageLinks(Model.PageInfo, b => Url.Action("Index",
+    new { page = b, phone = Model.SelectedPhone }))
+</div>
+
+
+

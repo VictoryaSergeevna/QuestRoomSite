@@ -1,0 +1,84 @@
+﻿@model Laba_14EntityASP.Models.QuestRoom
+
+<div>
+    <h4>Quest Room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DurationTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DurationTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinPlayersCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinPlayersCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxPlayersCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxPlayersCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FearLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FearLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Difficulty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Difficulty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone.PhoneNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }, null) |
+    @Html.ActionLink("Back", "Index")
+</p>
